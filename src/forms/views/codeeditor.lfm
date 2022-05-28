@@ -1,0 +1,52 @@
+object frCodeEditor: TfrCodeEditor
+  Left = 352
+  Height = 519
+  Top = 250
+  Width = 960
+  Caption = 'frCodeEditor'
+  ClientHeight = 519
+  ClientWidth = 960
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 519
+    Top = 0
+    Width = 960
+    Align = alClient
+    TabOrder = 0
+  end
+  object SynFreePascalSyn1: TSynFreePascalSyn
+    Enabled = False
+    AsmAttri.Foreground = 8826344
+    CommentAttri.Foreground = 12500670
+    IDEDirectiveAttri.Foreground = 14176947
+    IdentifierAttri.Foreground = 14327115
+    KeyAttri.Foreground = 3309267
+    NumberAttri.Foreground = 4227327
+    StringAttri.Foreground = 14548660
+    SymbolAttri.Foreground = 8826344
+    ProcedureHeaderName.Foreground = 16757075
+    CaseLabelAttri.Foreground = 8826344
+    CompilerMode = pcmObjFPC
+    NestedComments = True
+    TypeHelpers = False
+    Left = 735
+    Top = 74
+  end
+  object SynJScriptSyn1: TSynJScriptSyn
+    Enabled = False
+    BracketAttri.Foreground = 11416569
+    CommentAttri.Foreground = 12500670
+    IdentifierAttri.Foreground = clWhite
+    KeyAttri.Foreground = clActiveCaption
+    NonReservedKeyAttri.Foreground = 16757075
+    EventAttri.Foreground = clWhite
+    NumberAttri.Foreground = 4227327
+    StringAttri.Foreground = 14548660
+    SymbolAttri.Foreground = 8826344
+    Left = 648
+    Top = 56
+  end
+end

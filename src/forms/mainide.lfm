@@ -1,0 +1,116 @@
+object frIDE: TfrIDE
+  Left = 352
+  Height = 552
+  Top = 250
+  Width = 1137
+  Caption = 'Samarinda Develop'
+  ClientHeight = 552
+  ClientWidth = 1137
+  DesignTimePPI = 120
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowInTaskBar = stAlways
+  object Panel1: TPanel
+    Left = 0
+    Height = 552
+    Top = 0
+    Width = 256
+    Align = alLeft
+    BevelOuter = bvNone
+    ClientHeight = 552
+    ClientWidth = 256
+    TabOrder = 0
+    object tvProjectStructure: TShellTreeView
+      Left = 0
+      Height = 552
+      Top = 0
+      Width = 256
+      Align = alClient
+      FileSortType = fstFoldersFirst
+      ParentShowHint = False
+      ReadOnly = True
+      RightClickSelect = True
+      RowSelect = True
+      ScrollBars = ssAutoBoth
+      ShowHint = True
+      ShowLines = False
+      TabOrder = 0
+      OnDblClick = tvProjectStructureDblClick
+      Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRightClickSelect, tvoRowSelect, tvoShowButtons, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+      TreeLinePenStyle = psSolid
+      ObjectTypes = [otFolders, otNonFolders, otHidden]
+    end
+  end
+  object Splitter1: TSplitter
+    Left = 256
+    Height = 552
+    Top = 0
+    Width = 6
+  end
+  object Panel2: TPanel
+    Left = 262
+    Height = 552
+    Top = 0
+    Width = 875
+    Align = alClient
+    ClientHeight = 552
+    ClientWidth = 875
+    TabOrder = 2
+    object Panel3: TPanel
+      Left = 1
+      Height = 185
+      Top = 366
+      Width = 873
+      Align = alBottom
+      BevelOuter = bvNone
+      TabOrder = 0
+    end
+    object Splitter2: TSplitter
+      Cursor = crVSplit
+      Left = 1
+      Height = 6
+      Top = 360
+      Width = 873
+      Align = alBottom
+      ResizeAnchor = akBottom
+    end
+    object pnCodeEditor: TPanel
+      Left = 1
+      Height = 359
+      Top = 1
+      Width = 873
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 2
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 616
+    object MenuItem1: TMenuItem
+      Caption = 'File'
+      object MenuItem5: TMenuItem
+        Caption = 'New'
+      end
+      object miOpenProject: TMenuItem
+        Caption = 'Open'
+        OnClick = miOpenProjectClick
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Edit'
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Run'
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Help'
+    end
+  end
+  object sddPath: TSelectDirectoryDialog
+    Left = 832
+    Top = 50
+  end
+end

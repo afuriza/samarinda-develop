@@ -1,0 +1,9 @@
+object frSplash: TfrSplash
+  Left = 352
+  Height = 240
+  Top = 250
+  Width = 320
+  Caption = 'frSplash'
+  DesignTimePPI = 120
+  OnShow = FormShow
+end
