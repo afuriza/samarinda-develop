@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="samarinda_ui"/>
+      </Item>
+      <Item>
         <PackageName Value="SynEdit"/>
       </Item>
       <Item>
@@ -67,6 +70,20 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="IdeBottomBar"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\views\ideoutput.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frIdeOutput"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="IdeOutput"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\views\samaeditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frSamaEditor"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SamaEditor"/>
       </Unit>
     </Units>
   </ProjectOptions>

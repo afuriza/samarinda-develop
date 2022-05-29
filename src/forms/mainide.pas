@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ExtCtrls,
-  ShellCtrls, LCLType, CodeEditor;
+  ShellCtrls, LCLType, CodeEditor, IdeOutput;
 
 type
 
@@ -22,7 +22,7 @@ type
     miOpenProject: TMenuItem;
     Panel1: TPanel;
     Panel2: TPanel;
-    Panel3: TPanel;
+    pnOutput: TPanel;
     pnCodeEditor: TPanel;
     sddPath: TSelectDirectoryDialog;
     tvProjectStructure: TShellTreeView;
@@ -70,6 +70,10 @@ begin
   frCodeEditor.Align := alClient;
   frCodeEditor.BorderStyle := bsNone;
   frCodeEditor.Show;
+  frIdeOutput.Parent := pnOutput;
+  frIdeOutput.Align := alClient;
+  frIdeOutput.BorderStyle := bsNone;
+  frIdeOutput.Show;
 end;
 
 procedure TfrIDE.miOpenProjectClick(Sender: TObject);

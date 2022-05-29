@@ -56,32 +56,33 @@ object frIDE: TfrIDE
     Top = 0
     Width = 875
     Align = alClient
+    BevelOuter = bvNone
     ClientHeight = 552
     ClientWidth = 875
     TabOrder = 2
-    object Panel3: TPanel
-      Left = 1
+    object pnOutput: TPanel
+      Left = 0
       Height = 185
-      Top = 366
-      Width = 873
+      Top = 367
+      Width = 875
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 0
     end
     object Splitter2: TSplitter
       Cursor = crVSplit
-      Left = 1
+      Left = 0
       Height = 6
-      Top = 360
-      Width = 873
+      Top = 361
+      Width = 875
       Align = alBottom
       ResizeAnchor = akBottom
     end
     object pnCodeEditor: TPanel
-      Left = 1
-      Height = 359
-      Top = 1
-      Width = 873
+      Left = 0
+      Height = 361
+      Top = 0
+      Width = 875
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 2

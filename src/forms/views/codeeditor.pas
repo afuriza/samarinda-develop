@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, SynEdit,
-  SynHighlighterPas, SynHighlighterJScript, FileUtil,
+  SynHighlighterPas, SynHighlighterJScript, FileUtil, SamaEditor,
   fgl;
 
 type
@@ -14,7 +14,7 @@ type
   { TfrCodeEditor }
 
   TFileDisplay = class(TObject)
-    ActiveSynEdit: TSynEdit;
+    ActiveSynEdit: TWinControl;
     ActivePage: TTabSheet;
   end;
 
@@ -39,6 +39,27 @@ implementation
 
 {$R *.lfm}
 
+function HasFileExt(const FileName, AFileExt: RawByteString): boolean;
+var
+  SL: TStringList;
+  i: integer;
+  FileExt: string;
+begin
+  Result := False;
+  SL := TStringList.Create;
+  SL.Delimiter := '.';
+  SL.DelimitedText := ExtractFileName(FileName);
+  if SL.Count > 1 then
+    for i := SL.Count -1 downto 1 do
+    begin
+      FileExt := '.' + SL[i] + FileExt;
+      if AFileExt = FileExt then
+        Result := True
+      else
+        Result := False;
+    end;
+end;
+
 procedure TfrCodeEditor.FormCreate(Sender: TObject);
 begin
   FileMap := TFileMap.Create;
@@ -51,24 +72,64 @@ end;
 
 procedure TfrCodeEditor.OpenSamaFile(APath: string);
 begin
-  if (ExtractFileExt(APath) = '.pas') or (ExtractFileExt(APath) = '.lson') then
+  if HasFileExt(APath, '.pas') or HasFileExt(APath, '.lson') or
+    HasFileExt(APath, '.lpr') or HasFileExt(APath, '.form.lson') then
   begin
     if FileMap.IndexOf(APath) = -1 then
     begin
       FileMap[APath] := TFileDisplay.Create;
       FileMap[APath].ActivePage := PageControl1.AddTabSheet;
-      FileMap[APath].ActiveSynEdit := TSynEdit.Create(Self);
+
+
+
+
+      if ExtractFileExt(APath) = '.pas' then
+      begin
+        FileMap[APath].ActiveSynEdit := TSynEdit.Create(Self);
+        FileMap[APath].ActiveSynEdit.Font.Name := 'Courier New';
+        FileMap[APath].ActiveSynEdit.Font.Size := 10;
+        FileMap[APath].ActiveSynEdit.Color := clBlack;
+        FileMap[APath].ActiveSynEdit.Font.Quality := fqCleartypeNatural;
+        TSynEdit(FileMap[APath].ActiveSynEdit).Lines.LoadFromFile(APath);
+        FileMap[APath].ActiveSynEdit.BorderSpacing.Right := 2;
+        FileMap[APath].ActiveSynEdit.BorderSpacing.Bottom := 2;
+        TSynEdit(FileMap[APath].ActiveSynEdit).Highlighter := SynFreePascalSyn1;
+      end
+      else if HasFileExt(APath, '.lson') then
+      begin
+        FileMap[APath].ActiveSynEdit := TSynEdit.Create(Self);
+        FileMap[APath].ActiveSynEdit.Font.Name := 'Courier New';
+        FileMap[APath].ActiveSynEdit.Font.Size := 10;
+        FileMap[APath].ActiveSynEdit.Color := clBlack;
+        FileMap[APath].ActiveSynEdit.Font.Quality := fqCleartypeNatural;
+        TSynEdit(FileMap[APath].ActiveSynEdit).Lines.LoadFromFile(APath);
+        FileMap[APath].ActiveSynEdit.BorderSpacing.Right := 2;
+        FileMap[APath].ActiveSynEdit.BorderSpacing.Bottom := 2;
+        TSynEdit(FileMap[APath].ActiveSynEdit).Highlighter := SynJScriptSyn1;
+      end
+      else if HasFileExt(APath, '.form.lson') then
+      begin
+        FileMap[APath].ActiveSynEdit := TfrSamaEditor.Create(Self);
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).ActiveSynEdit.Font.Name
+          := 'Courier New';
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).ActiveSynEdit.Font.Size := 10;
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).ActiveSynEdit.Color := clBlack;
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).ActiveSynEdit.Font.Quality
+          := fqCleartypeNatural;
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).ActiveSynEdit.Lines
+          .LoadFromFile(APath);
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).ActiveSynEdit.BorderSpacing
+          .Right := 2;
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).ActiveSynEdit.BorderSpacing
+          .Bottom := 2;
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).ActiveSynEdit.Highlighter
+          := SynJScriptSyn1;
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).BorderStyle := bsNone;
+        TfrSamaEditor(FileMap[APath].ActiveSynEdit).Show;
+      end;
+
       FileMap[APath].ActiveSynEdit.Parent := FileMap[APath].ActivePage;
       FileMap[APath].ActiveSynEdit.Align := alClient;
-      FileMap[APath].ActiveSynEdit.Font.Name := 'Courier New';
-      FileMap[APath].ActiveSynEdit.Font.Size := 10;
-      FileMap[APath].ActiveSynEdit.Color := clBlack;
-      FileMap[APath].ActiveSynEdit.Font.Quality := fqCleartypeNatural;
-      FileMap[APath].ActiveSynEdit.Lines.LoadFromFile(APath);
-      if ExtractFileExt(APath) = '.pas' then
-        FileMap[APath].ActiveSynEdit.Highlighter := SynFreePascalSyn1
-      else
-        FileMap[APath].ActiveSynEdit.Highlighter := SynJScriptSyn1;
       PageControl1.ActivePage := FileMap[APath].ActivePage;
     end
     else
