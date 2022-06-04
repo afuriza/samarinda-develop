@@ -11,7 +11,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="2"/>
         <CursorPos Y="29"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="50"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -23,7 +23,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="11"/>
         <CursorPos X="13" Y="35"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="50"/>
       </Unit>
       <Unit>
         <Filename Value="forms\mainide.pas"/>
@@ -32,9 +32,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MainIde"/>
-        <TopLine Value="28"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="34"/>
         <CursorPos X="34" Y="34"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="50"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -45,12 +46,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="CodeEditor"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="107"/>
         <CursorPos X="58" Y="128"/>
-        <UsageCount Value="35"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="50"/>
       </Unit>
       <Unit>
         <Filename Value="forms\views\idebottombar.pas"/>
@@ -59,9 +58,34 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="IdeBottomBar"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <CursorPos X="16"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\views\ideoutput.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frIdeOutput"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="IdeOutput"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="13"/>
+        <CursorPos X="3" Y="37"/>
+        <UsageCount Value="38"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\views\samaeditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frSamaEditor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SamaEditor"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="9"/>
+        <CursorPos X="76" Y="51"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -70,168 +94,215 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="309"/>
         <CursorPos X="17" Y="322"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="14"/>
       </Unit>
       <Unit>
         <Filename Value="C:\fpcup\files\fpcsrc\rtl\objpas\sysutils\finah.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="10" Y="26"/>
-        <UsageCount Value="10"/>
-      </Unit>
-      <Unit>
-        <Filename Value="forms\views\ideoutput.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frIdeOutput"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="IdeOutput"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="14"/>
-        <CursorPos X="3" Y="37"/>
-        <UsageCount Value="23"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="forms\views\samaeditor.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frSamaEditor"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="SamaEditor"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="33"/>
-        <CursorPos X="42" Y="44"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="8"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\samarinda-ui\src\samarinda.forms.pas"/>
         <UnitName Value="Samarinda.Forms"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="37"/>
+        <CursorPos X="47" Y="24"/>
+        <UsageCount Value="18"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\fpcup\files\fpcsrc\rtl\objpas\classes\classesh.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="34"/>
+        <TopLine Value="1884"/>
+        <CursorPos X="20" Y="1898"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\samarinda-ui\src\template_form\samaui_template_form.pas"/>
+        <ComponentName Value="TemplateForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="3" Y="11"/>
         <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <UnitName Value="Forms"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="717"/>
+        <CursorPos X="18" Y="718"/>
+        <UsageCount Value="18"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1108"/>
+        <CursorPos X="3" Y="1122"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\lclclasses.pp"/>
+        <UnitName Value="LCLClasses"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="35"/>
+        <CursorPos X="54" Y="47"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\samarinda-ui\src\samarinda.comutils.pas"/>
+        <UnitName Value="Samarinda.ComUtils"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="70"/>
+        <CursorPos X="20" Y="95"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\samarinda-ui\src\template_form\base_window.pas"/>
+        <ComponentName Value="frBaseWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="21"/>
+        <CursorPos X="59" Y="180"/>
+        <UsageCount Value="18"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\include\customform.inc"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="4"/>
+        <CursorPos Y="2304"/>
+        <UsageCount Value="17"/>
+        <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="9" Column="14"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="817" Column="18" TopLine="795"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="47" Column="58" TopLine="28"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1063" Column="10" TopLine="1039"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="57" Column="40" TopLine="34"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1104" Column="22" TopLine="1082"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\codeeditor.pas"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1126" Column="21" TopLine="1103"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="60" Column="37" TopLine="35"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1205" Column="60" TopLine="1183"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="61" Column="37" TopLine="36"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1386" Column="17" TopLine="1364"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="63" Column="37" TopLine="38"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1387" Column="26" TopLine="1365"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="69" Column="3" TopLine="46"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1400" Column="28" TopLine="1378"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="73" Column="48" TopLine="46"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1445" Column="23" TopLine="1423"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\codeeditor.pas"/>
-        <Caret Line="16" Column="14" TopLine="8"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1446" Column="19" TopLine="1424"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="85" Column="56" TopLine="58"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1460" Column="36" TopLine="1438"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\codeeditor.pas"/>
-        <Caret Line="24" Column="23" TopLine="14"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1501" Column="34" TopLine="1478"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\codeeditor.pas"/>
-        <Caret Line="39" Column="29" TopLine="20"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1502" Column="36" TopLine="1479"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\codeeditor.pas"/>
-        <Caret Line="49" Column="35" TopLine="26"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1628" Column="50" TopLine="1606"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\codeeditor.pas"/>
-        <Caret Line="39" Column="29" TopLine="29"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="1884" Column="62" TopLine="1860"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="79" Column="51" TopLine="62"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="396" Column="14" TopLine="382"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="85" Column="28" TopLine="62"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="402" Column="36" TopLine="382"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\ideoutput.pas"/>
-        <Caret Column="15"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="461" Column="30" TopLine="437"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="76" Column="19" TopLine="55"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="470" Column="17" TopLine="446"/>
       </Position>
       <Position>
-        <Filename Value="forms\mainide.pas"/>
-        <Caret Line="35" Column="42" TopLine="22"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="474" Column="28" TopLine="450"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\codeeditor.pas"/>
-        <Caret Line="55" Column="35" TopLine="49"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="475" Column="26" TopLine="451"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\samaeditor.pas"/>
-        <Caret Column="11"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="509" Column="20" TopLine="487"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\codeeditor.pas"/>
-        <Caret Line="17" Column="31" TopLine="34"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="511" Column="23" TopLine="489"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\ideoutput.pas"/>
-        <Caret Column="15" TopLine="6"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="512" Column="19" TopLine="490"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\samaeditor.pas"/>
-        <Caret Line="56" Column="35" TopLine="31"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="520" Column="51" TopLine="498"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\samaeditor.pas"/>
-        <Caret Line="40" Column="12" TopLine="36"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="525" Column="36" TopLine="503"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\samaeditor.pas"/>
-        <Caret Line="57" Column="30" TopLine="36"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="553" Column="69" TopLine="530"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\samaeditor.pas"/>
-        <Caret Line="56" Column="43" TopLine="39"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="639" Column="34" TopLine="616"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\samaeditor.pas"/>
-        <Caret Line="62" Column="6" TopLine="44"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="669" Column="36" TopLine="647"/>
       </Position>
       <Position>
-        <Filename Value="forms\views\samaeditor.pas"/>
-        <Caret Line="44" Column="42" TopLine="33"/>
+        <Filename Value="C:\fpcup\files\lazarus\lcl\forms.pp"/>
+        <Caret Line="702" Column="77" TopLine="679"/>
       </Position>
     </JumpHistory>
     <RunParams>

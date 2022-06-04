@@ -82,6 +82,7 @@
         <Filename Value="forms\views\samaeditor.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frSamaEditor"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SamaEditor"/>
       </Unit>

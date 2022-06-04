@@ -6,24 +6,25 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  SynEdit, Samarinda.Forms;
+  SynEdit, Samarinda.Forms, Samarinda.ComUtils;
 
 type
 
   { TfrSamaEditor }
 
   TfrSamaEditor = class(TForm)
-    Button1: TButton;
+    btPreview: TButton;
     Panel1: TPanel;
     pnPreview: TPanel;
     Splitter1: TSplitter;
     ActiveSynEdit: TSynEdit;
     procedure ActiveSynEditKeyUp(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-    procedure Button1Click(Sender: TObject);
+    procedure btPreviewClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     SamaForm: TSamaForm;
+    PreviewForm: TSamaForm;
     procedure LoadForm;
   public
 
@@ -44,9 +45,23 @@ begin
   ActiveSynEdit.BorderSpacing.Bottom := 2;
 end;
 
-procedure TfrSamaEditor.Button1Click(Sender: TObject);
+procedure TfrSamaEditor.btPreviewClick(Sender: TObject);
 begin
-  LoadForm;
+  isDesigning := False;
+  frIdeOutput.lbMessages.Clear;
+  if Assigned(PreviewForm) then
+    FreeAndNil(PreviewForm);
+  PreviewForm := TSamaForm.Create(Self);
+  try
+    PreviewForm.LoadFromString(ActiveSynEdit.Text);
+    PreviewForm.Show;
+  except
+    on e: Exception do
+    begin
+      frIdeOutput.lbMessages.Items.Add(e.Message);
+    end;
+  end;
+  isDesigning := True;
 end;
 
 procedure TfrSamaEditor.ActiveSynEditKeyUp(Sender: TObject; var Key: Word;
@@ -57,6 +72,7 @@ end;
 
 procedure TfrSamaEditor.LoadForm;
 begin
+  isDesigning := True;
   frIdeOutput.lbMessages.Clear;
   if Assigned(SamaForm) then
     FreeAndNil(SamaForm);

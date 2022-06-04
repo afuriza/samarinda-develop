@@ -31,14 +31,14 @@ object frSamaEditor: TfrSamaEditor
       ParentColor = False
       TabOrder = 0
     end
-    object Button1: TButton
+    object btPreview: TButton
       Left = 176
       Height = 31
       Top = 402
       Width = 94
       Anchors = [akRight, akBottom]
-      Caption = 'Reload'
-      OnClick = Button1Click
+      Caption = 'Preview'
+      OnClick = btPreviewClick
       TabOrder = 1
     end
   end
