@@ -10,7 +10,8 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, splash, MainIde, CodeEditor, IdeBottomBar, IdeOutput, SamaEditor
+  Forms, splash, MainIde, CodeEditor, IdeBottomBar, IdeOutput, SamaEditor, 
+ProjectWizard
   { you can add units after this };
 
 {$R *.res}
@@ -25,6 +26,7 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TfrIdeOutput, frIdeOutput);
   Application.CreateForm(TfrSamaEditor, frSamaEditor);
+  Application.CreateForm(TfrProjectWizard, frProjectWizard);
   Application.Run;
 end.
 

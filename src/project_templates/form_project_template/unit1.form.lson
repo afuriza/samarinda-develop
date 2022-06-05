@@ -1,0 +1,7 @@
+Position: poScreenCenter
+Panel/panel1 {
+  Align: alClient
+  Button/button1 {
+    Caption: "Click me"
+  }
+}

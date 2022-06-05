@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ExtCtrls,
-  ShellCtrls, LCLType, CodeEditor, IdeOutput;
+  ShellCtrls, LCLType, CodeEditor, IdeOutput, ProjectWizard;
 
 type
 
@@ -15,10 +15,18 @@ type
   TfrIDE = class(TForm)
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
+    MenuItem10: TMenuItem;
+    miFormAppWizard: TMenuItem;
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
     MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
+    Separator2: TMenuItem;
+    Separator1: TMenuItem;
     miOpenProject: TMenuItem;
     Panel1: TPanel;
     Panel2: TPanel;
@@ -31,6 +39,7 @@ type
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure miFormAppWizardClick(Sender: TObject);
     procedure miOpenProjectClick(Sender: TObject);
     procedure tvProjectStructureDblClick(Sender: TObject);
   private
@@ -55,7 +64,10 @@ begin
   DialogStyle := MB_ICONQUESTION + MB_YESNO;
   Answer := Application.MessageBox('Are you sure?', 'Confirmation', DialogStyle);
   if Answer = IDYES then
-    Application.Terminate;
+    Application.Terminate
+  else
+    Abort;
+
 end;
 
 procedure TfrIDE.FormCreate(Sender: TObject);
@@ -65,7 +77,7 @@ end;
 
 procedure TfrIDE.FormShow(Sender: TObject);
 begin
-  tvProjectStructure.Root := 'F:\';
+  tvProjectStructure.Root := ExtractFilePath(Application.ExeName);
   frCodeEditor.Parent := pnCodeEditor;
   frCodeEditor.Align := alClient;
   frCodeEditor.BorderStyle := bsNone;
@@ -74,6 +86,11 @@ begin
   frIdeOutput.Align := alClient;
   frIdeOutput.BorderStyle := bsNone;
   frIdeOutput.Show;
+end;
+
+procedure TfrIDE.miFormAppWizardClick(Sender: TObject);
+begin
+  frProjectWizard.Show;
 end;
 
 procedure TfrIDE.miOpenProjectClick(Sender: TObject);

@@ -5,9 +5,8 @@ unit CodeEditor;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, SynEdit,
-  SynHighlighterPas, SynHighlighterJScript, FileUtil, SamaEditor,
-  fgl;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, Menus,
+  SynEdit, SynHighlighterPas, SynHighlighterJScript, FileUtil, SamaEditor, fgl;
 
 type
 
@@ -21,11 +20,17 @@ type
   TFileMap = specialize TFPGMap<string, TFileDisplay>;
 
   TfrCodeEditor = class(TForm)
-    PageControl1: TPageControl;
+    MenuItem1: TMenuItem;
+    pcCodeEditor: TPageControl;
+    PopupMenu1: TPopupMenu;
     SynFreePascalSyn1: TSynFreePascalSyn;
     SynJScriptSyn1: TSynJScriptSyn;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure MenuItem1Click(Sender: TObject);
+    procedure pcCodeEditorCloseTabClicked(Sender: TObject);
+    procedure pcCodeEditorMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     FileMap: TFileMap;
   public
@@ -70,6 +75,40 @@ begin
   FileMap.Free;
 end;
 
+procedure TfrCodeEditor.MenuItem1Click(Sender: TObject);
+var
+  i: integer;
+begin
+  for i := 0 to FileMap.Count -1 do
+  begin
+    if pcCodeEditor.Pages[pcCodeEditor.TabIndex] = FileMap.Data[i].ActivePage then
+    begin
+      FreeAndNil(FileMap.Data[i].ActiveSynEdit);
+      FreeAndNil(FileMap.Data[i].ActivePage);
+      FileMap.Delete(i);
+      Exit;
+    end;
+  end;
+end;
+
+procedure TfrCodeEditor.pcCodeEditorCloseTabClicked(Sender: TObject);
+begin
+
+end;
+
+procedure TfrCodeEditor.pcCodeEditorMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+var
+  tabindex:integer;
+begin
+  if button = mbright then
+  begin
+    tabindex:=tpagecontrol(sender).IndexOfTabAt(X, Y);
+    if tabindex >= 0 then
+      pcCodeEditor.PageIndex := tabindex;
+  end;
+end;
+
 procedure TfrCodeEditor.OpenSamaFile(APath: string);
 begin
   if HasFileExt(APath, '.pas') or HasFileExt(APath, '.lson') or
@@ -78,7 +117,7 @@ begin
     if FileMap.IndexOf(APath) = -1 then
     begin
       FileMap[APath] := TFileDisplay.Create;
-      FileMap[APath].ActivePage := PageControl1.AddTabSheet;
+      FileMap[APath].ActivePage := pcCodeEditor.AddTabSheet;
 
 
 
@@ -130,11 +169,11 @@ begin
 
       FileMap[APath].ActiveSynEdit.Parent := FileMap[APath].ActivePage;
       FileMap[APath].ActiveSynEdit.Align := alClient;
-      PageControl1.ActivePage := FileMap[APath].ActivePage;
+      pcCodeEditor.ActivePage := FileMap[APath].ActivePage;
     end
     else
     begin
-      PageControl1.ActivePage := FileMap[APath].ActivePage;
+      pcCodeEditor.ActivePage := FileMap[APath].ActivePage;
     end;
     FileMap[APath].ActivePage.Caption := ExtractFileName(APath);
   end;

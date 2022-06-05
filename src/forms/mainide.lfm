@@ -93,11 +93,30 @@ object frIDE: TfrIDE
     object MenuItem1: TMenuItem
       Caption = 'File'
       object MenuItem5: TMenuItem
-        Caption = 'New'
+        Caption = 'New Project'
+        object miFormAppWizard: TMenuItem
+          Caption = 'Form Application'
+          OnClick = miFormAppWizardClick
+        end
+      end
+      object MenuItem7: TMenuItem
+        Caption = 'New Unit'
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'New Form'
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
       end
       object miOpenProject: TMenuItem
-        Caption = 'Open'
+        Caption = 'Open Project Folder'
         OnClick = miOpenProjectClick
+      end
+      object Separator2: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem8: TMenuItem
+        Caption = 'Exit'
       end
     end
     object MenuItem2: TMenuItem
@@ -105,6 +124,12 @@ object frIDE: TfrIDE
     end
     object MenuItem3: TMenuItem
       Caption = 'Run'
+      object MenuItem9: TMenuItem
+        Caption = 'Compile and Run'
+      end
+      object MenuItem10: TMenuItem
+        Caption = 'Compile'
+      end
     end
     object MenuItem4: TMenuItem
       Caption = 'Help'
